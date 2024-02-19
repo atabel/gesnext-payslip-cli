@@ -23,7 +23,7 @@ const waitForNavigation = () => page.waitForNavigation();
 const clickAndWaitForNavigation = selector =>
   Promise.all([waitForNavigation(), click(selector)]);
 
-const waitFor = selector => page.waitFor(selector);
+const waitFor = selector => page.waitForSelector(selector);
 
 const goTo = url => page.goto(url);
 

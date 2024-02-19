@@ -8,6 +8,7 @@ program
   .option('-h, --host <url>', 'URL of the portal')
   .option('-u, --user <user>', 'User')
   .option('-p, --password <password>', 'Password')
+  .option('-o, --otp <otp>', 'One-time password')
   .option(
     '-m, --months [number]',
     'Months back (defaults to last payslip)',
@@ -15,10 +16,13 @@ program
   )
   .parse(process.argv);
 
-const { host: domain, user, password, months: monthsBack } = program;
+const { host: domain, user, password, months: monthsBack, otp } = program;
 
 if (!domain || !user || !password) {
   program.help();
 }
 
-downloadPayslip({ domain, user, password, monthsBack });
+// In the login form, the otp needs to be concatenated to the password
+const loginPassword = otp ? password + otp : password;
+
+downloadPayslip({ domain, user, password: loginPassword, monthsBack });
