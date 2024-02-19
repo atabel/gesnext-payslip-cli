@@ -1,5 +1,5 @@
 {
-  "name": "gesnext-payslip-cli",
+  "name": "viewnext-payslip-cli",
   "version": "1.1.0",
   "description": "CLI tool to download payslips from GesNext employee portal",
   "main": "bin/index.js",
@@ -11,11 +11,11 @@
     "lint": "eslint --fix bin/**/*.{js,json}",
     "precommit": "lint-staged"
   },
-  "author": "Ramón Guijarro <hola@soyguijarro.com>",
+  "author": "Abel Toledano <atabel87@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soyguijarro/gesnext-payslip-cli.git"
+    "url": "git+https://github.com/atabel/gesnext-payslip-cli.git"
   },
   "engines": {
     "node": ">=18"
