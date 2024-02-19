@@ -4,7 +4,7 @@
   "description": "CLI tool to download payslips from GesNext employee portal",
   "main": "bin/index.js",
   "bin": {
-    "viewnext-payslip": "./bin/index.js"
+    "viewnext-payslip": "bin/index.js"
   },
   "scripts": {
     "start": "node bin/index.js",
@@ -13,7 +13,10 @@
   },
   "author": "Ramón Guijarro <hola@soyguijarro.com>",
   "license": "MIT",
-  "repository": "https://github.com/soyguijarro/gesnext-payslip-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soyguijarro/gesnext-payslip-cli.git"
+  },
   "engines": {
     "node": ">=18"
   },
