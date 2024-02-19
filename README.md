@@ -26,3 +26,7 @@ Options:
 ```
 
 This will download the payslip PDF file to your current folder. If you don't want to manually run this command every time, you could for example set up a [cron job](https://en.wikipedia.org/wiki/Cron) to do it for you once a month.
+
+## Kudos
+
+Kudos to @soyguijarro for the original idea and the [first version of this tool](https://github.com/soyguijarro/gesnext-payslip-cli)
