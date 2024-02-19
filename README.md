@@ -7,13 +7,13 @@ ViewNext Payslip CLI is a command line tool written in Node to download payslips
 You need Node.js to run this tool.
 
 ```
-npx viewnext-payslip
+npm i -g viewnext-payslip-cli
 ```
 
 ## Usage
 
 ```
-Usage: payslip [options]
+Usage: viewnext-payslip [options]
 
 Options:
 
