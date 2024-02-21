@@ -14,15 +14,17 @@ program
     'Months back (defaults to last payslip)',
     parseInt
   )
+  .option('-d, --output-dir [dir]', 'Output directory')
   .parse(process.argv);
 
-const { host: domain, user, password, months: monthsBack, otp } = program;
+const { host: domain, user, password, months: monthsBack, otp, outputDir } = program;
 
 if (!domain || !user || !password) {
   program.help();
 }
 
+
 // In the login form, the otp needs to be concatenated to the password
 const loginPassword = otp ? password + otp : password;
 
-downloadPayslip({ domain, user, password: loginPassword, monthsBack });
+downloadPayslip({ domain, user, password: loginPassword, monthsBack, outputDir });

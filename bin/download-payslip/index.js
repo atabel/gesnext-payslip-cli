@@ -1,3 +1,4 @@
+const path = require('path');
 const { run } = require('../common/runner');
 const {
   launchBrowser,
@@ -61,7 +62,7 @@ const logIn = async ({ domain, user, password }) => {
   return getCookies();
 };
 
-module.exports = async ({ domain, user, password, monthsBack = 0 }) => {
+module.exports = async ({ domain, user, password, monthsBack = 0, outputDir = '.' }) => {
   try {
     await launchBrowser();
 
@@ -76,7 +77,7 @@ module.exports = async ({ domain, user, password, monthsBack = 0 }) => {
       const filename = getPayslipFilename(date);
 
       await run('Downloading payslip', () =>
-        downloadFile({ url, cookies, filePath: filename })
+        downloadFile({ url, cookies, filePath: path.join(outputDir, filename) })
       );
       log(`Payslip downloaded as ${filename}`);
       monthsBack--;
