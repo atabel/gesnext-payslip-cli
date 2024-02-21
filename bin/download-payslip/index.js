@@ -25,7 +25,7 @@ const {
   PAYSLIP_LINK_SELECTOR,
 } = require('./selectors');
 
-const getPayslipFilename = date => {
+const getPayslipFilename = (date) => {
   const [day, month, year] = date.trim().split('-');
   return `payslip_${year}-${month}-${day}.pdf`;
 };
@@ -62,7 +62,13 @@ const logIn = async ({ domain, user, password }) => {
   return getCookies();
 };
 
-module.exports = async ({ domain, user, password, monthsBack = 0, outputDir = '.' }) => {
+module.exports = async ({
+  domain,
+  user,
+  password,
+  monthsBack = 0,
+  outputDir = '.',
+}) => {
   try {
     await launchBrowser();
 

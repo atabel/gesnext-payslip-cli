@@ -8,7 +8,7 @@ const downloadFile = ({ url, cookies, filePath }) => {
     cookieJar.setCookie(cookie, url);
   });
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     request({ url, jar: cookieJar })
       .pipe(createWriteStream(filePath))
       .on('close', resolve);

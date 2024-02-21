@@ -9,23 +9,23 @@ const getPageContent = () => page.content();
 
 const type = (selector, text) => page.type(selector, text);
 
-const getElementContent = async selector => {
+const getElementContent = async (selector) => {
   const handle = await page.$(selector);
-  const content = await page.evaluate(element => element.textContent, handle);
+  const content = await page.evaluate((element) => element.textContent, handle);
   await handle.dispose();
   return content;
 };
 
-const click = selector => page.click(selector);
+const click = (selector) => page.click(selector);
 
 const waitForNavigation = () => page.waitForNavigation();
 
-const clickAndWaitForNavigation = selector =>
+const clickAndWaitForNavigation = (selector) =>
   Promise.all([waitForNavigation(), click(selector)]);
 
-const waitFor = selector => page.waitForSelector(selector);
+const waitFor = (selector) => page.waitForSelector(selector);
 
-const goTo = url => page.goto(url);
+const goTo = (url) => page.goto(url);
 
 const closeBrowser = () => browser.close();
 

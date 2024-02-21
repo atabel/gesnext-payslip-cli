@@ -28,11 +28,11 @@
     "request": "^2.85.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-plugin-json": "^1.2.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "prettier": "^1.11.1"
+    "eslint": "^8.56.0",
+    "eslint-plugin-json": "^3.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
   },
   "eslintConfig": {
     "env": {
@@ -60,8 +60,8 @@
   "lint-staged": {
     "*.{js,json}": [
       "eslint --fix",
-      "prettier",
-      "git add"
+      "prettier --write"
     ]
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }
